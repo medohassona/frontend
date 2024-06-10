@@ -1,0 +1,10 @@
+<div class="chat-container">
+  <h1>{{ 'CHAT' | translate }}</h1>
+  <div *ngFor="let message of messages">
+    <p>{{ message.sender }}: {{ message.content }}</p>
+  </div>
+  <form (ngSubmit)="sendMessage()">
+    <input [(ngModel)]="messageContent" name="messageContent" required>
+    <button type="submit">{{ 'SEND' | translate }}</button>
+  </form>
+</div>
