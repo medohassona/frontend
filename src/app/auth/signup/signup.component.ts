@@ -8,13 +8,17 @@ import {AuthService} from "../../services/auth.service";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
+  firstname: string | undefined;
+  lastname: string | undefined;
   email: string | undefined;
   password: string | undefined;
+  gender: string | undefined;
 
   constructor(private router: Router, private authService: AuthService) {}
 
   onSignup() {
-    this.authService.register({ email: this.email, password: this.password }).subscribe(
+    this.authService.register({firstname: this.firstname, lastname: this.lastname, email: this.email,  gender: this.gender, password: this.password, role: 'USER' }).subscribe(
       () => this.router.navigate(['/login']),
       error => console.error('Signup failed', error)
     );

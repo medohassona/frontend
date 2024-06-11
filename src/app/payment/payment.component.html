@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="text-center">Subscribe</h1>
+  <div class="form-group">
+    <label for="card-element">Credit or debit card</label>
+    <div id="card-element"><!-- Stripe Elements will be inserted here --></div>
+    <div id="card-errors" role="alert"></div>
+  </div>
+  <button (click)="handlePayment()" class="btn btn-primary btn-block">Pay 10€</button>
+  <div id="payment-result"></div>
+</div>

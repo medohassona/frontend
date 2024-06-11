@@ -1,0 +1,34 @@
+export interface User {
+  id?: number;
+  firstName: string;
+  lastName: string;
+  birthday: Date;
+  age?: number;
+  email: string;
+  phoneNumber: string;
+  nationality: string;
+  countryOfResidency: string;
+  city: string;
+  educationLevel: 'BAC_OR_LESS' | 'UNIVERSITY' | 'NON';
+  workSituation: 'EMPLOYEE' | 'FREELANCER' | 'BUSINESSMAN' | 'UNEMPLOYED';
+  socialStatus: 'MARRIED' | 'DIVORCED' | 'SINGLE' | 'WIDOWED';
+  lastLogin?: Date;
+  isOnline?: boolean;
+  financialSituation: 'RICH' | 'MIDDLE' | 'UNDER_MIDDLE';
+  height: number;
+  weight: number;
+  healthSituation: 'NORMAL' | 'MENTAL_ILLNESS' | 'CHRONIC_DISEASE' | 'SKIN_DISEASE';
+  shape: 'SLIM' | 'SPORT' | 'FAT' | 'NORMAL';
+  acceptsPolygamy: boolean;
+  religion: 'RELIGIOUS' | 'COMMITTED_TO_RELIGION' | 'NOT_VERY_RELIGIOUS' | 'NOT_AT_ALL';
+  prayerFrequency: 'PRAY' | 'OFTEN' | 'SOMETIMES' | 'NOT_AT_ALL';
+  aboutMe: string;
+  aboutMyPartner: string;
+  dontLikeToHaveInPartner: string;
+  whenDoYouWantToGetMarried: 'ASAP' | 'IN_MONTHS' | 'NEXT_YEAR' | 'WHENEVER_POSSIBLE';
+  livingSituation: 'OWN_HOME' | 'RENTING' | 'WITH_MY_FAMILY';
+  habits: 'SMOKING' | 'DRINKING' | 'SMOKING_AND_DRINKING' | 'NON';
+  preferredLanguage: string;
+  typeOfClothes?: 'NO_HIJAB' | 'MID_HIJAB' | 'FULL_HIJAB' | 'NIQAB';
+  activated?: boolean;
+}

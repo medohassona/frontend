@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="text-center">Search Users</h1>
+  <form (ngSubmit)="onSearch()" #searchForm="ngForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="ageMin">Age Min</label>
+        <input type="number" class="form-control" id="ageMin" name="ageMin" [(ngModel)]="filter.ageMin">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="ageMax">Age Max</label>
+        <input type="number" class="form-control" id="ageMax" name="ageMax" [(ngModel)]="filter.ageMax">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="educationLevel">Education Level</label>
+        <select class="form-control" id="educationLevel" name="educationLevel" [(ngModel)]="filter.educationLevel">
+          <option value="BAC_OR_LESS">Bac or Less</option>
+          <option value="UNIVERSITY">University</option>
+          <option value="NON">Non</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="workSituation">Work Situation</label>
+        <select class="form-control" id="workSituation" name="workSituation" [(ngModel)]="filter.workSituation">
+          <option value="EMPLOYEE">Employee</option>
+          <option value="FREELANCER">Freelancer</option>
+          <option value="BUSINESSMAN">Businessman</option>
+          <option value="UNEMPLOYED">Unemployed</option>
+        </select>
+      </div>
+    </div>
+    <!-- Add more filters as needed -->
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
+  <div *ngIf="users.length > 0">
+    <h2 class="mt-4">Results</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let user of users">
+        <h5>{{ user.fullName }}</h5>
+        <p>Country: {{ user.countryOfResidency }}</p>
+        <p>Age: {{ user.age }}</p>
+        <p>Match Percentage: {{ user.conformityPercentage }}%</p>
+      </li>
+    </ul>
+    <nav aria-label="Page navigation example" class="mt-4">
+      <ul class="pagination">
+        <li class="page-item" [class.disabled]="page === 0">
+          <a class="page-link" (click)="previousPage()">Previous</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" (click)="nextPage()">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

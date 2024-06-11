@@ -16,6 +16,9 @@ import {JwtInterceptor, JwtModule} from "@auth0/angular-jwt";
 import {AuthService} from "./services/auth.service";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { ThanksComponent } from './general/thanks/thanks.component';
+import { SearchComponent } from './search/search.component';
+import { PaymentComponent } from './payment/payment.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -28,7 +31,10 @@ export function tokenGetter() {
     SignupComponent,
     HomeComponent,
     ChatComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ThanksComponent,
+    SearchComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

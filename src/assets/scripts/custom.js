@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadHighlight.rel = "stylesheet";
             loadHighlight.className = "page-highlight";
             loadHighlight.type = "text/css";
-            loadHighlight.href = 'styles/highlights/highlight_' + highlight +'.css';
+            loadHighlight.href = '/assets/styles/highlights/highlight_' + highlight +'.css';
             document.getElementsByTagName("head")[0].appendChild(loadHighlight);
             document.body.setAttribute('data-highlight', 'highlight-'+highlight)
             localStorage.setItem(pwaName+'-Highlight', highlight)
@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadHighlight.rel = "stylesheet";
             loadHighlight.className = "page-highlight";
             loadHighlight.type = "text/css";
-            loadHighlight.href = 'styles/highlights/highlight_' + rememberHighlight +'.css';
+            loadHighlight.href = '/assets/styles/highlights/highlight_' + rememberHighlight +'.css';
             if(!document.querySelectorAll('.page-highlight').length){
                 document.getElementsByTagName("head")[0].appendChild(loadHighlight);
                 document.body.setAttribute('data-highlight', 'highlight-'+rememberHighlight)
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadHighlight.rel = "stylesheet";
             loadHighlight.className = "page-highlight";
             loadHighlight.type = "text/css";
-            loadHighlight.href = 'styles/highlights/highlight_' + defaultHighlight[1] +'.css';
+            loadHighlight.href = '/assets/styles/highlights/highlight_' + defaultHighlight[1] +'.css';
             if(!document.querySelectorAll('.page-highlight').length){
                 document.getElementsByTagName("head")[0].appendChild(loadHighlight);
                 document.body.setAttribute('data-highlight', 'highlight-'+defaultHighlight[1])
@@ -436,8 +436,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //Activating Dark Mode
         const darkModeSwitch = document.querySelectorAll('[data-toggle-theme]')
         darkModeSwitch.forEach(el => el.addEventListener('click',e =>{
-            if(document.body.className == "theme-light"){ removeTransitions(); activateDarkMode();}
-            else if(document.body.className == "theme-dark"){ removeTransitions(); activateLightMode();}
+            if(document.body.className === "theme-light"){ removeTransitions(); activateDarkMode();}
+            else if(document.body.className === "theme-dark"){ removeTransitions(); activateLightMode();}
             setTimeout(function(){addTransitions();},350);
         }));
 
@@ -944,16 +944,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			var form = document.getElementById('contactForm');
 			form.onsubmit = function (e) {
 				e.preventDefault();
-		
+
 				// Assume the form is valid at the beginning
-				form.setAttribute('data-form','valid'); 
-		
+				form.setAttribute('data-form','valid');
+
 				// Validate Fields
 				var nameField = document.getElementById('contactNameField');
 				var mailField = document.getElementById('contactEmailField');
 				var textField = document.getElementById('contactMessageTextarea');
 				var validateMail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-				
+
 				if(nameField.value === ''){
 					form.setAttribute('data-form','invalid');
 					nameField.classList.add('border-red-dark');
@@ -962,7 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					document.getElementById('validator-name').classList.add('disabled');
 					nameField.classList.remove('border-red-dark');
 				}
-		
+
 				if(mailField.value === ''){
 					form.setAttribute('data-form','invalid');
 					mailField.classList.add('border-red-dark');
@@ -978,7 +978,7 @@ document.addEventListener('DOMContentLoaded', () => {
 						mailField.classList.remove('border-red-dark');
 					}
 				}
-		
+
 				if(textField.value === ''){
 					form.setAttribute('data-form','invalid');
 					textField.classList.add('border-red-dark');
@@ -987,12 +987,12 @@ document.addEventListener('DOMContentLoaded', () => {
 					document.getElementById('validator-text').classList.add('disabled');
 					textField.classList.remove('border-red-dark');
 				}
-		
+
 				// Submit the form only if it's valid
 				if(form.getAttribute('data-form') === 'valid'){
 					document.querySelectorAll('.form-sent')[0].classList.remove('disabled');
 					document.querySelectorAll('.contact-form')[0].classList.add('disabled');
-		
+
 					// Collect the form data while iterating over the inputs
 					var data = {};
 					for (let i = 0, ii = form.length; i < ii; ++i) {
@@ -1001,16 +1001,16 @@ document.addEventListener('DOMContentLoaded', () => {
 							data[input.name] = input.value;
 						}
 					}
-		
+
 					// Construct an HTTP request
 					var xhr = new XMLHttpRequest();
 					xhr.open(form.method, form.action, true);
 					xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
 					xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-		
+
 					// Send the collected data as JSON
 					xhr.send(JSON.stringify(data));
-		
+
 					// Callback function
 					xhr.onloadend = function (response) {
 						if (response.target.status === 200) {
@@ -1020,7 +1020,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			};
 		}
-		
+
         //Collapse Flip Icon
         var collapseBtn = document.querySelectorAll('[data-bs-toggle="collapse"]:not(.no-effect)');
         if(collapseBtn.length){
