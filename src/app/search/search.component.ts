@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
 
   loadUsers() {
     console.log(this.sanitizeFilter(this.filter));
-    this.userService.getUsersByFilter(this.sanitizeFilter(this.filter), this.page, this.size).subscribe((response) => {
+    this.userService.getUsersByFilter(this.filter, this.page, this.size).subscribe((response) => {
       this.users = response.content;
     });
   }

@@ -8,15 +8,19 @@ import {AuthGuard} from "./services/security/auth.guard";
 import {ForgotPasswordComponent} from "./auth/forgot-password/forgot-password.component";
 import {SearchComponent} from "./search/search.component";
 import {PaymentComponent} from "./payment/payment.component";
+import {ProfileComponent} from "./account/profile/profile.component";
+import {SignupInfoComponent} from "./auth/signup-info/signup-info.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'signup-info', component: SignupInfoComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];

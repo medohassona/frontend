@@ -9,7 +9,7 @@ export interface User {
   nationality: string;
   countryOfResidency: string;
   city: string;
-  educationLevel: 'BAC_OR_LESS' | 'UNIVERSITY' | 'NON';
+  educationLevel: 'BAC_OR_LESS' | 'UNIVERSITY' | 'NONE';
   workSituation: 'EMPLOYEE' | 'FREELANCER' | 'BUSINESSMAN' | 'UNEMPLOYED';
   socialStatus: 'MARRIED' | 'DIVORCED' | 'SINGLE' | 'WIDOWED';
   lastLogin?: Date;
