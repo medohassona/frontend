@@ -4,11 +4,11 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="ageMin">Age Min</label>
-        <input type="number" class="form-control" id="ageMin" name="ageMin" [(ngModel)]="filter.ageMin">
+        <input type="number" class="form-control" id="ageMin" name="ageMin" [(ngModel)]="filter.minAge">
       </div>
       <div class="form-group col-md-6">
         <label for="ageMax">Age Max</label>
-        <input type="number" class="form-control" id="ageMax" name="ageMax" [(ngModel)]="filter.ageMax">
+        <input type="number" class="form-control" id="ageMax" name="ageMax" [(ngModel)]="filter.maxAge">
       </div>
     </div>
     <div class="form-row">
@@ -54,5 +54,18 @@
         </li>
       </ul>
     </nav>
+  </div>
+</div>
+
+<div *ngIf="users.length > 0" class="page-content header-clear-medium">
+  <div class="row mb-0">
+    <div *ngFor="let user of users" class="col-6 pe-0">
+      <div class="card card-style">
+        <img src="assets/images/11.png" class="img-fluid">
+        <div class="content pb-0">
+          <p>{{ user.fullName }}. It only has 1 column per row. All contents are styled like this by default</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,0 +1,60 @@
+<div class="header header-fixed header-logo-center">
+  <a href="index.html" class="header-title">   قريباً من الانطلاق&nbsp;{{this.user?.firstname}}&nbsp;  </a>
+  <a href="#" data-back-button="" class="header-icon header-icon-1"><i class="fas fa-arrow-right"></i></a>
+  <a href="#" data-toggle-theme="" class="header-icon header-icon-4"><i class="fas fa-lightbulb"></i></a>
+</div>
+
+<div class="page-content header-clear-medium">
+  <div class="card card-style">
+    <div class="content mb-0">
+      <form [formGroup]="signupForm"  (ngSubmit)="onNext()">
+        <h3>بيانات عنك</h3>
+        <p>
+          اكمل بياناتك, لتجعل شريك حياتك يصل اليك بأسرع وقت :)
+        </p>
+
+        <div class="input-style no-borders no-icon mb-4">
+          <textarea id="aboutMe" formControlName="aboutMe"  placeholder="القليل عنك" ></textarea>
+          <label for="aboutMe" class="color-highlight">القليل عنك</label>
+          <em class="mt-n3">(required)</em>
+        </div>
+        <div class="input-style no-borders no-icon mb-4">
+          <textarea id="dontLikeToHaveInPartner" formControlName="dontLikeToHaveInPartner"  placeholder="الأشياء التي تريدها والأشياء اتي لا تريدها في شريك حياتك" ></textarea>
+          <label for="dontLikeToHaveInPartner" class="color-highlight">القليل عنك شريك حياتك</label>
+          <em class="mt-n3">(required)</em>
+        </div>
+
+        <div class="input-style no-borders no-icon mb-4">
+          <label for="whenDoYouWantToGetMarried" class="color-highlight">متى تريد أن تتزوج</label>
+          <select id="whenDoYouWantToGetMarried" formControlName="whenDoYouWantToGetMarried">
+            <option value="" [disabled]="true" [selected]="true">متى تريد أن تتزوج</option>
+            <option value="ASAP">في أسرع وقت ممكن</option>
+            <option value="IN_MONTHS">في غضون شهور</option>
+            <option value="NEXT_YEAR">في العام المقبل</option>
+            <option value="WHENEVER_POSSIBLE">في أي وقت توفرت الظروف</option>
+          </select>
+          <span><i class="fa fa-chevron-down"></i></span>
+          <i class="fa fa-check disabled valid color-green-dark"></i>
+          <i class="fa fa-check disabled invalid color-red-dark"></i>
+          <em></em>
+        </div>
+        <div class="input-style no-borders no-icon mb-4">
+          <label for="acceptsPolygamy" class="color-highlight">هل تقبل العتدد؟</label>
+          <select id="acceptsPolygamy" formControlName="acceptsPolygamy" >
+            <option value="" [disabled]="true" [selected]="true">هل تقبل العتدد؟</option>
+            <option value="YES">نعم</option>
+            <option value="NO">لا</option>
+          </select>
+          <span><i class="fa fa-chevron-down"></i></span>
+          <i class="fa fa-check disabled valid color-green-dark"></i>
+          <i class="fa fa-check disabled invalid color-red-dark"></i>
+          <em></em>
+        </div>
+
+        <button type="submit" href="#" data-menu="menu-tour-1" class="btn btn-m btn-full mb-3 rounded-xl text-uppercase font-900 shadow-s bg-green-dark submit">التالي</button>
+      </form>
+    </div>
+
+  </div>
+
+</div>

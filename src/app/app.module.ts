@@ -9,16 +9,21 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {CustomLoader} from "./translate-loader";
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home.component';
 import { ChatComponent } from './chat/chat.component';
-import {JwtInterceptor, JwtModule} from "@auth0/angular-jwt";
+import {JwtModule} from "@auth0/angular-jwt";
 import {AuthService} from "./services/auth.service";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { ThanksComponent } from './general/thanks/thanks.component';
 import { SearchComponent } from './search/search.component';
 import { PaymentComponent } from './payment/payment.component';
+import { JwtInterceptor } from './services/security/jwt.interceptor';
+import { ProfileComponent } from './account/profile/profile.component';
+import { SignupInfoComponent } from './auth/signup-info/signup-info.component';
+import { ProfileSettingsComponent } from './account/profile-settings/profile-settings.component';
+import { SignupAboutComponent } from './auth/signup-about/signup-about.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -34,7 +39,11 @@ export function tokenGetter() {
     ForgotPasswordComponent,
     ThanksComponent,
     SearchComponent,
-    PaymentComponent
+    PaymentComponent,
+    ProfileComponent,
+    SignupInfoComponent,
+    ProfileSettingsComponent,
+    SignupAboutComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +61,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['localhost:8080'], // Update with your API domain
-        disallowedRoutes: ['localhost:8080/authenticate', 'localhost:8080/register'] // Update with your auth routes
+        allowedDomains: ['http://localhost:8090'], // Update with your API domain
+        disallowedRoutes: ['http://localhost:8090/authenticate', 'http://localhost:8090/register'] // Update with your auth routes
       }
     }),
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -61,7 +70,8 @@ export function tokenGetter() {
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,

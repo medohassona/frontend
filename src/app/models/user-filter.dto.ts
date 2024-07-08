@@ -1,9 +1,9 @@
 export interface UserFilterDTO {
-  ageMin?: number;
-  ageMax?: number;
+  minAge?: number;
+  maxAge?: number;
   nationality?: string;
   countryOfResidency?: string;
-  educationLevel?: 'BAC_OR_LESS' | 'UNIVERSITY' | 'NON';
+  educationLevel?: 'BAC_OR_LESS' | 'UNIVERSITY' | 'NONE';
   workSituation?: 'EMPLOYEE' | 'FREELANCER' | 'BUSINESSMAN' | 'UNEMPLOYED';
   socialStatus?: 'MARRIED' | 'DIVORCED' | 'SINGLE' | 'WIDOWED';
   financialSituation?: 'RICH' | 'MIDDLE' | 'UNDER_MIDDLE';
