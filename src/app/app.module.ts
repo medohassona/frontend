@@ -9,7 +9,7 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {CustomLoader} from "./translate-loader";
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home.component';
 import { ChatComponent } from './chat/chat.component';
 import {JwtModule} from "@auth0/angular-jwt";
@@ -22,6 +22,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { JwtInterceptor } from './services/security/jwt.interceptor';
 import { ProfileComponent } from './account/profile/profile.component';
 import { SignupInfoComponent } from './auth/signup-info/signup-info.component';
+import { ProfileSettingsComponent } from './account/profile-settings/profile-settings.component';
+import { SignupAboutComponent } from './auth/signup-about/signup-about.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -39,7 +41,9 @@ export function tokenGetter() {
     SearchComponent,
     PaymentComponent,
     ProfileComponent,
-    SignupInfoComponent
+    SignupInfoComponent,
+    ProfileSettingsComponent,
+    SignupAboutComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,8 @@ export function tokenGetter() {
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,

@@ -26,9 +26,16 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/styles/bootstrap.css",
+              "src/assets/styles/style.css",
+              "src/assets/fonts/css/fontawesome-all.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/scripts/bootstrap.min.js",
+              "src/assets/scripts/_service-worker.js",
+              "src/assets/scripts/custom.js"
+            ],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },

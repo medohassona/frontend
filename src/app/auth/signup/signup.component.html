@@ -40,9 +40,9 @@
         <div class="form-group">
           <label for="gender">الجنس</label>
           <select class="form-control" id="gender" name="gender" [(ngModel)]="gender" required>
-            <option value="" disabled>Select your gender</option>
-            <option value="MAN">Male</option>
-            <option value="WOMAN">Female</option>
+            <option value="" disabled>من أنت ؟</option>
+            <option value="MAN">عريس وأبحث عن عروسة</option>
+            <option value="WOMAN">عروسة وأبحث عن عريس</option>
           </select>
         </div>
         <div class="input-style no-borders has-icon validate-field mt-2">
@@ -74,7 +74,7 @@
           <label for="box2-fac-checkbox"><a href="#" data-menu="menu-event-sample"><span>الرجـاء الموافقة على الخصوصية</span></a> </label>
         </div>
 
-        <button [disabled]="!isAgreed" href="#" (click)="onSignup()" data-menu="menu-tour-1" class="btn btn-m btn-full rounded-sm shadow-l bg-green-dark text-uppercase font-900 mt-4">إنشاء حساب</button>
+        <button [disabled]="!isAgreed" href="#" data-menu="menu-tour-1" class="btn btn-m btn-full mb-3 rounded-xl text-uppercase font-900 shadow-s bg-green-dark submit">إنشاء حساب</button>
       </form>
       <div class="divider"></div>
 
@@ -153,7 +153,7 @@
     <p class="boxed-text-xl pt-2">
       I can show your users different boxes, or multiple boxes, have different styles, and even complex content. Let me show you.
     </p>
-    <a [routerLink]="['/signup-info']" href="#" data-menu="menu-tour-2" class="btn btn-m rounded-sm shadow-l bg-highlight btn-center-m text-uppercase font-900">أكمل ادخال بياناتي</a>
+    <button [disabled]="!isSignedUp" [routerLink]="['/signup-info']" href="#" data-menu="menu-tour-2" class="btn btn-m rounded-sm shadow-l bg-highlight btn-center-m text-uppercase font-900">أكمل ادخال بياناتي</button>
   </div>
 </div>
 
